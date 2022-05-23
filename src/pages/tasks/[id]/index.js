@@ -11,7 +11,7 @@ const Task = ({ task, error }) => {
   const deleteTask = async () => {
     const { id } = query;
     try {
-      await fetch(`http://localhost:3000/api/tasks/${id}`, {
+      await fetch(`https://nextiapimg.vercel.app/api/tasks/${id}`, {
         method: "DELETE",
       });
     } catch (error) {
