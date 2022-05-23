@@ -14,7 +14,7 @@ const NewTask = () => {
   const [errors, setErrors] = useState({});
 
   const getTask = async () => {
-    const res = await fetch("http://localhost:3000/api/tasks/" + query.id);
+    const res = await fetch("https://nextiapimg.vercel.app/api/tasks/" + query.id);
     const data = await res.json();
     setNewTask({ title: data.title, description: data.description });
   };
@@ -58,7 +58,7 @@ const NewTask = () => {
 
   const createTask = async () => {
     try {
-      await fetch("http://localhost:3000/api/tasks", {
+      await fetch("https://nextiapimg.vercel.app/api/tasks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const NewTask = () => {
 
   const updateTask = async () => {
     try {
-      await fetch("http://localhost:3000/api/tasks/" + query.id, {
+      await fetch("https://nextiapimg.vercel.app/api/tasks/" + query.id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
